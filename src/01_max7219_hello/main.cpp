@@ -19,6 +19,7 @@
 #include <Arduino.h>
 #include <MD_Parola.h>
 #include <MD_MAX72xx.h>
+#include "emen_serial.h"                    // Shared boot banner.
 
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW   // Common Wokwi/generic modules.
 #define MAX_DEVICES   4                     // 4 modules chained => 8x32 px.
@@ -27,7 +28,7 @@
 MD_Parola matrix = MD_Parola(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
 
 void setup() {
-  Serial.begin(115200);
+  logBoot("01_max7219_hello");              // Serial.begin + banner.
   matrix.begin();
   matrix.setIntensity(4);              // 0..15
   matrix.displayClear();

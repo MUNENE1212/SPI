@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Munene",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-mfrc522", "id": "rfid1", "top": -140, "left": 200, "attrs": {} },
+    { "type": "wokwi-rfid-tag", "id": "tag1", "top": -230, "left": 260, "attrs": { "uid": "04:A1:B2:C3" } },
+    { "type": "wokwi-rfid-tag", "id": "tag2", "top": -230, "left": 320, "attrs": { "uid": "DE:AD:BE:EF" } },
+    { "type": "wokwi-led", "id": "ledOk", "top": 40, "left": -80, "attrs": { "color": "green" } },
+    { "type": "wokwi-resistor", "id": "rOk", "top": 40, "left": -140, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3",   "rfid1:VCC",  "red",    [ "v0" ] ],
+    [ "esp:GND.1", "rfid1:GND",  "black",  [ "v0" ] ],
+    [ "esp:23",    "rfid1:MOSI", "green",  [ "v0" ] ],
+    [ "esp:19",    "rfid1:MISO", "blue",   [ "v0" ] ],
+    [ "esp:18",    "rfid1:SCK",  "yellow", [ "v0" ] ],
+    [ "esp:5",     "rfid1:SDA",  "orange", [ "v0" ] ],
+    [ "esp:17",    "rfid1:RST",  "cyan",   [ "v0" ] ],
+    [ "esp:2",  "rOk:1",     "green", [ "v0" ] ],
+    [ "rOk:2",  "ledOk:A",   "green", [ "v0" ] ],
+    [ "ledOk:C","esp:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

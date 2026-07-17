@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = '../../.pio/build/03_sd_card/firmware.bin'
+elf = '../../.pio/build/03_sd_card/firmware.elf'
