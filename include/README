@@ -1,0 +1,1 @@
+Shared header files can live here. `#include <header.h>` will find them.
