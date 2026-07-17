@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Munene",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led-matrix",
+      "id": "mx1",
+      "top": -100,
+      "left": 160,
+      "attrs": {
+        "rows": "8",
+        "cols": "64",
+        "layout": "",
+        "pixelShape": "square",
+        "pixelSize": "5050",
+        "brightness": "1"
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:TX",    "$serialMonitor:RX", "",       [] ],
+    [ "esp:RX",    "$serialMonitor:TX", "",       [] ],
+    [ "esp:5V",    "mx1:VDD",           "red",    [ "v0" ] ],
+    [ "esp:GND.1", "mx1:VSS",           "black",  [ "v0" ] ],
+    [ "esp:23",    "mx1:DIN",           "green",  [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

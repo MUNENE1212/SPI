@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = '../../.pio/build/06_ws2812_signboard_spi/firmware.bin'
+elf = '../../.pio/build/06_ws2812_signboard_spi/firmware.elf'
