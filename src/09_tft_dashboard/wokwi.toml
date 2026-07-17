@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = '../../.pio/build/09_tft_dashboard/firmware.bin'
+elf = '../../.pio/build/09_tft_dashboard/firmware.elf'
