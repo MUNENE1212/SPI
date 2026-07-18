@@ -3,20 +3,38 @@
   "author": "Munene",
   "editor": "wokwi",
   "parts": [
-    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
-    { "type": "wokwi-ili9341", "id": "tft1", "top": -140, "left": 200, "attrs": {} }
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -115.2,
+      "left": -187.16,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "tft1",
+      "top": -148.7,
+      "left": 308.4,
+      "rotate": 90,
+      "attrs": {}
+    }
   ],
   "connections": [
-    [ "esp:TX",    "$serialMonitor:RX", "",       [] ],
-    [ "esp:RX",    "$serialMonitor:TX", "",       [] ],
-    [ "esp:3V3",   "tft1:VCC",          "red",    [ "v0" ] ],
-    [ "esp:GND.1", "tft1:GND",          "black",  [ "v0" ] ],
-    [ "esp:23",    "tft1:MOSI",         "green",  [ "v0" ] ],
-    [ "esp:18",    "tft1:SCK",          "yellow", [ "v0" ] ],
-    [ "esp:5",     "tft1:CS",           "orange", [ "v0" ] ],
-    [ "esp:16",    "tft1:D/C",          "violet", [ "v0" ] ],
-    [ "esp:17",    "tft1:RST",          "cyan",   [ "v0" ] ],
-    [ "esp:3V3",   "tft1:LED",          "red",    [ "v0" ] ]
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:23", "tft1:MOSI", "green", [ "h249.6", "v86.4" ] ],
+    [
+      "tft1:VCC",
+      "esp:3V3",
+      "red",
+      [ "h-86.4", "v-57.6", "h-249.6", "v-38.4", "h-144", "v28.8" ]
+    ],
+    [ "tft1:LED", "esp:3V3", "red", [ "h-326.4", "v86.39", "h-153.6", "v-201.6", "h-9.6" ] ],
+    [ "tft1:RST", "esp:17", "cyan", [ "h-172.8", "v19.2" ] ],
+    [ "tft1:SCK", "esp:18", "green", [ "h-240", "v-0.01" ] ],
+    [ "tft1:CS", "esp:5", "purple", [ "h-288", "v19.2" ] ],
+    [ "tft1:D/C", "esp:16", "green", [ "h-268.8", "v19.2" ] ],
+    [ "tft1:GND", "esp:GND.2", "black", [ "h-86.4", "v-57.6" ] ]
   ],
   "dependencies": {}
 }
